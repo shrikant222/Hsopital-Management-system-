@@ -11,10 +11,11 @@ public class Patient {
     }
     public void addpatient(){
         System.out.println("Enter patient Name:- ");
-        String name = scanner.nextLine();
+        String name = scanner.next();
+
         System.out.println("Enter patient age:- ");
         int age=scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // consume newline
         System.out.println("Enter patient gender:- ");
         String gender = scanner.next();
         try{
@@ -56,7 +57,7 @@ public class Patient {
                 String gender = resultSet.getString("gender");
 
                 // Use printf() for formatting output
-                System.out.printf("|%-16d|%-20s|%-8d|%-7s|%n", id, name, age, gender);
+                System.out.printf("|%-14d|%-20s|%-8d|%-7s|%n", id, name, age, gender);
             }
             System.out.println("+----------------+-------------------+--------+-------+");
         } catch (SQLException e) {
